@@ -6,7 +6,7 @@ import useCreateDate from '../hooks/useCreateDate';
 
 const EditNote = ({notes, setNotes}) => {
   const {id} = useParams();
-  const note = notes.find(item => item.id == id);
+  const note = notes.find(item => item.id === id);
   const [title, setTitle] = useState(note.title);
   const [details, setDetails] = useState(note.details);
   const date = useCreateDate();
@@ -18,7 +18,7 @@ const EditNote = ({notes, setNotes}) => {
     if (title && details) {
         const newNote = {...note, title, details, date};
         const newNotes = notes.map(item => {
-          if(item.id == id) {
+          if(item.id === id) {
             item = newNote;
           }
           return item;
@@ -30,7 +30,7 @@ const EditNote = ({notes, setNotes}) => {
 
   const handleDelete = () => {
         if(window.confirm('Are you sure you want to delete?')) {
-    const newNotes = notes.filter(item => item.id != id);
+    const newNotes = notes.filter(item => item.id !== id);
     setNotes(newNotes);
     navigate('/')
     }

@@ -12,7 +12,7 @@ const Notes = ({notes}) => {
   const [filterNotes, setFilterNotes] = useState(notes);
 
   const handleSearch = () => {
-          setFilterNotes(notes.filter(note => {
+          setFilterNotes(notes.filter(note =>  {
           if(note.title.toLowerCase().match(text.toLocaleLowerCase())) {
             return note;
           }

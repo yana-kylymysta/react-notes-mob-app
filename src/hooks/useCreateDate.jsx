@@ -1,6 +1,6 @@
 
 const useCreateDate = () => {
-    const dateObj= new Date();
+    const dateObj = new Date();
     const month = dateObj.getMonth();
     let monthName;
     switch(month){
@@ -30,7 +30,12 @@ const useCreateDate = () => {
         break;
     }
 
-    const date = `${monthName} ${dateObj.getDate()}, ${dateObj.getFullYear()} [${dateObj.getHours()}:${dateObj.getMinutes()}]`;
+    const formatDate = (num) => {
+       const item = num.toString().padStart(2, '0');
+       return item
+    }
+
+    const date = `${monthName} ${dateObj.getDate()}, ${dateObj.getFullYear()} [${formatDate(dateObj.getHours())}:${formatDate(dateObj.getMinutes())}]`;
     return date;
 }
 

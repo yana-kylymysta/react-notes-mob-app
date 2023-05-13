@@ -2,7 +2,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Notes, CreateNote, EditNote } from './pages/index.js';
 import './App.css';
-import dummyNotes from './dummy_notes.js';
 import {useState, useEffect} from 'react';
 
 function App() {
